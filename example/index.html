@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>example</title>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+</head>
+<body>
+	<div id="test">
+		<input type="text" name="" v-model="name">
+		姓名:<span>{{name}}</span>
+		性别:<p v-on:click="change">{{obj.b}}</p>
+		<p>{{count}}</p>
+	</div>
+	<div id="app">
+		<div v-html="html"></div>
+	</div>
+	<script src='../mvvm.js'></script>
+	<script type="text/javascript">
+		var test = new MVVM({
+			el:"#test",
+			data:{
+				name:"mirror",
+				sex:"男",
+				count:0,
+				obj:{
+					a:12132,
+					b:123123
+				}
+			},
+			methods:{
+				click:function(){
+					this.count++;
+				},
+				change:function(){
+					this.obj = {a:111}
+				}
+			}
+		})
+		var app = new MVVM({
+			el:"#app",
+			data:{
+				html:""
+			}
+		})
+	</script>
+</body>
+</html>
