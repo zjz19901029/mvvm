@@ -123,6 +123,7 @@ const compileUtil = {
                 timer = setTimeout(function() {
                     self._setVmVal(vm, exp, newVal);
                     val = newVal;
+                    $elm = undefined;
                 })
             });
         },
@@ -186,10 +187,10 @@ const updater = {
     },
     classUpdater: function() {},
     modelUpdater: function(node, value, oldValue) {
-        /*if ($elm === node) {
+        if ($elm === node) {
             return false;
         }
-        $elm = undefined;*/
+        $elm = undefined;
         node.value = typeof value === 'undefined' ? '' : value;
     }
 }

@@ -11,8 +11,8 @@
 <body>
 	<div id="test">
 		<input type="text" name="" v-model="name">
-		姓名:<span>{{name}}</span>
-		性别:<p v-on:click="change">{{obj.b}}</p>
+		<p>姓名:<span>{{name}}-{{sex}}</span></p>
+		<p>性别:<span v-on:click="click">{{obj.b}}</span></p>
 		<p>{{count}}</p>
 	</div>
 	<div id="app">
